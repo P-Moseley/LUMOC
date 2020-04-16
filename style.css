@@ -82,7 +82,9 @@
 	display: block;
 	min-height: 80px;
 	background: (36, 243, 243);
-	color: #FFFFFF;
+/*	color: #FFFFFF;
+*/
+color: #757575;
 }
 .flip-card {
 	background-color: transparent;
@@ -119,14 +121,18 @@
 
 .flip-card-front {
 
-	color: rgb(0, 0, 0);
+/*	color: rgb(0, 0, 0);
+*/
+color: #757575;
 }
 
 .flip-card-back {
 	background-color: rgb(0, 0, 0);
 	background-color: inherit;
-	color: #FFFFFF;
-	transform: rotateY(180deg);
+/*	color: #FFFFFF;
+*/	
+color: #757575;
+transform: rotateY(180deg);
 	text-size-adjust: 10%;
 	text-align: center, justify;
 	word-wrap: break-word;

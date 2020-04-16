@@ -5,7 +5,7 @@ body {
 */
 	background: #FBFBFB;
 
-	color: #fff;
+	color: #757575;
 	font-family: 'Noto Sans', sans-serif;
 }
 .card {
@@ -15,8 +15,11 @@ body {
 	align-items: center;
 
 	font-size: 3rem;
-	color: rgb(0, 0, 0);
-	box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+/*	color: rgb(0, 0, 0);
+*/	
+color: #757575;
+
+box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
 	height: 100%;
 	width: 100%;
 	border-radius: 4px;
