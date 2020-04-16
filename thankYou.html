@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+    <link
+      rel="StyleSheet"
+      href="<%=request.getContextPath()%>/style.css"
+      type="text/css"
+    />
+    <link
+      rel="StyleSheet"
+      href="<%=request.getContextPath()%>/base.css"
+      type="text/css"
+    />
+    <title>Linux mail order company</title>
+    <!--   <style>
+        @import url('./base.css');
+        @import url('./animated-grid.css');
+    </style> -->
+  </head>
+
+  <body>
+    <section class="basic-grid">
+      <!-- <div class="card">1</div> -->
+      <div class="card" role="card">
+        <h3 style="font-size: 2vw;">
+          Thanks for your order ${name} . <br />
+          Email will be set to ${email} shortly.
+        </h3>
+        <p style="font-size: 1vw;">Write what you want here</p>
+      </div>
+    </section>
+
+    <a
+      id="navBtn"
+      class="card"
+      href="<%=request.getContextPath()%>/productsPage.jsp"
+      style="background-color: yellow; color: black;"
+      >Go Back</a
+    >
+
+    <!-- <!-- 	<section class="basic-grid" style="margin-top: auto"> -->
+    -->
+    <!-- 				<button type="submit" style="background-color: yellow margin-top: auto" class="card">Go back products Page</button> -->
+    <!-- <!-- 			</section> -->
+    -->
+  </body>
+</html>

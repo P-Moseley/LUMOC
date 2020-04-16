@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Linux USB mail order company.</title>
+  <LINK REL="StyleSheet" HREF="<%=request.getContextPath()%>/style.css" TYPE="text/css">
+  <LINK REL="StyleSheet" HREF="<%=request.getContextPath()%>/base.css" TYPE="text/css">
+
+
+
+
+
+</head>
+
+<body>
+  <nav aria-label="Skip Links">
+    <ul class="off-screen">
+      <li>
+        <a href="#final" class="skip-link">
+          Go to tracking button.
+        </a>
+      </li>
+      <!--     <li> -->
+      <!--       <a href="#myBtn" class="skip-link"> -->
+      <!--      Open tracking Modal -->
+
+      <!--         REF=https://codepen.io/scottohara/pen/QKmWJG -->
+      <!--       </a> -->
+      <!--     </li> -->
+    </ul>
+  </nav>
+
+  <section class="animated-grid">
+    <%-- <a href="<%=request.getContextPath()%>/productsPage.jsp"> --%>
+    <div class="flex-container" style="background-color: #000000;">
+      <!-- <div class="card" style="background-color: aqua;">See all -->
+      <!-- products >>></div> -->
+    </div>
+    <!-- </a> -->
+    <div class="card" role="card-show">
+      <a href="<%=request.getContextPath()%>/productsPage1?distro=Arch">
+
+        <div class="flip-card ">
+
+          <div class="flip-card-inner ">
+
+            <div class="flip-card-front " style="background-color: #1793d1">
+              <img src="<%=request.getContextPath()%>/images/Arch.png" style="object-fit: cover; width: 100%;">
+
+            </div>
+            <div class="flip-card-back " style="background-color: #1793d1">
+
+              <article class="article-container">
+
+                <h3 style="font-size: 2vw;">Arch</h3>
+                <p style="font-size: 1vw;">Click here to order Arch</p>
+
+              </article>
+      </a>
+
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="card " role="card-show">
+      <a href="<%=request.getContextPath()%>/productsPage1?distro=Ubuntu">
+
+        <div class="flip-card ">
+          <div class="flip-card-inner ">
+
+            <div class="flip-card-front " style="background-color: orange">
+              <img src="<%=request.getContextPath()%>/images/Ubuntu.png" style="object-fit: cover; width: 100%;">
+
+            </div>
+            <div class="flip-card-back " style="background-color: orange">
+
+
+
+              <article class="article-container">
+
+                <h3 style="font-size: 2vw;">Ubuntu</h3>
+                <p style="font-size: 1vw;">Click here to order Ubuntu</p>
+
+              </article>
+      </a>
+
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+
+    <div class="flex-container" role="flex-container">
+      <div class="card" style="background-color: aqua;"role="seeAllProductsCard">
+
+        <%-- <a href="<%=request.getContextPath()%>/Admin">Go to Admin --%>
+        <!-- page</a> <br><br><br> -->
+        <%-- href="<%=request.getContextPath()%>/sampleHelloWorldProxy/TestClient.jsp">Track --%>
+        <!-- your order</a> -->
+        <a href="<%=request.getContextPath()%>/productsPage.jsp">See all Products</a>
+
+
+      </div>
+    </div>
+
+
+    <div class="card" id="final" role="LogoCard">
+      <div class="flip-card " role="LogoCardBack">
+        <div class="flip-card-inner" role="LogoCardBackInner">
+
+          <div class="flip-card-front " style="background-color: #FFFFFF" role="LogoCardFront">
+
+            <img alt="The Linux mail order company logo" src="<%=request.getContextPath()%>/images/Linux-stick-l.png" style="float: left" >
+
+            <h5>Welcome to the linux USB mail company</h5>
+
+          </div>
+          <div class="flip-card-back " style="background-color: grey" role="LogoCardBack">
+
+            <img alt="The Linux mail order company logo" src="<%=request.getContextPath()%>/images/Linux-stick-2.png" style="float: left" alt="The Linux mail order company logo">
+
+            <article class="article-container">
+
+              <h3 style="font-size: 2vw;">@ The Linux USB mail company</h3>
+              <p style="font-size: 1vw;">
+                Write what you want here<br>
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum
+              </p>
+
+            </article>
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+  </section>
+
+  </head>
+
+  <body>
+
+
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn" style="background-color: yellow" class="card">Track my order
+    </button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal" role="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content" role="modal-content">
+        <div class="modal-header" role="modal-header">
+           <span class="close" role="Close Modal">&times;</span>
+
+          <h3>Tracking Service</h3>
+        </div>
+        <div class="modal-body" class="flex-container" role="modal-body">
+          <label for="trackingService" name="trackingServiceLabel">Please Enter your tracking ID number here</label>
+
+          <FORM METHOD="POST" ACTION="trackingResults.jsp" TARGET="trackingResults">
+            <INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup("13")%>">
+
+
+            <INPUT TYPE="TEXT" NAME="name16" SIZE=20 placeholder="Enter your tracking number here" aria-label="trackingService">
+
+            <INPUT TYPE="SUBMIT" VALUE="Track" id="trackingService">
+            <INPUT TYPE="RESET" VALUE="Clear" id="trackingService">
+          </FORM>
+        </div>
+        <div class="modal-footer" role="modal-footer">
+          <label for="modal-footer">The Linux Mail order company.</label>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+
+      // Get the button that opens the modal
+      var btn = document.getElementById("myBtn");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks the button, open the modal
+      btn.onclick = function () {
+        modal.style.display = "block";
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    </script>
+
+
+  </body>
+
+  <footer>
+    <!-- <footer class="form"> -->
+    <h3>By Patrick Moseley</h3>
+
+  </footer>
+
+  <!-- check this== https://www.w3schools.com/howto/howto_css_flip_card.asp -->
+
+</html>

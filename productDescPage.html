@@ -1,0 +1,234 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<LINK REL="StyleSheet" HREF="<%=request.getContextPath()%>/style.css"
+	TYPE="text/css">
+<LINK REL="StyleSheet" HREF="<%=request.getContextPath()%>/base.css"
+	TYPE="text/css">
+<title>Linux mail order company</title>
+
+</head>
+
+<body>
+	<nav aria-label="Skip Links">
+		<ul class="off-screen">
+		  <li>
+			<a href="#myBtn" class="skip-link">
+			  Go to Order button.
+			</a>
+		  </li>
+		  <!--     <li> -->
+		  <!--       <a href="#myBtn" class="skip-link"> -->
+		  <!--      Open tracking Modal -->
+	
+		  <!--         REF=https://codepen.io/scottohara/pen/QKmWJG -->
+		  <!--       </a> -->
+		  <!--     </li> -->
+		</ul>
+	  </nav>
+<div class='rowForDesc' style="background-color: ${colour};" role="Selected Product Name">
+    <div class='double-columnForDesc' role="double-column">
+
+			<img alt="Selected ProductName" src="<%=request.getContextPath()%>/images/${prodName}.png">
+
+   </div>
+    <div class='columnForDesc' style="  text-align: center;  overflow-wrap: break-word;" role="productName desc">
+
+<p style="font-size: 60px;color: black">${prodName}</p>
+
+
+    </div>
+  </div>
+
+
+
+
+	<div class='rowForDesc' role="desc row">
+		<div class='double-columnForDesc' role="desc row">
+
+			<img alt="Selected product desktop image"
+				src="<%=request.getContextPath()%>/images/Desktops/${prodName}.png"
+				style="max-width: 100%;">
+
+		</div>
+		<div class='columnForDesc'
+			style="text-align: center; overflow-wrap: break-word;">
+
+
+			<p style="font-size: 1vw;color: ${colour}">${prodDesc}</p>
+			<%-- 						<p style="font-size: 1vw;color: ${colour};  position: absolute;  bottom: 10px; text-align: centre;">WebsiteLink TEST_test${websiteLink} </p> --%>
+			<p id="navBtn"
+				style="font-size: 1vw;color: black;  position: absolute;  bottom: 10px; text-align: centre;">
+				Vist Webpage here: <a href="${websiteLink}"> ${websiteLink}</a>
+			</p>
+			<!-- </article> -->
+		</div>
+
+	</div>
+	<a
+      id="navBtn"
+      class="card"
+      href="<%=request.getContextPath()%>/productsPage.jsp"
+      style="background-color: ${colour}; color: black;"
+      >Go Back</a
+    >
+	</div>
+
+	<div class="flex-container" role="article container">
+		<article class="article-container">
+
+			<div class="card" role="card">
+				<%--  <img alt="desktop image" src="<%=request.getContextPath()%>/images/Desktops/${prodName}.png" style="width: 100%; position: absolute;top: 0;left: 0;"> --%>
+
+			</div>
+	</div>
+
+	</div>
+
+	<style>
+
+.modal-header {
+	padding: 2px 16px;
+	background-color: ${colour}
+
+;
+color
+:
+
+white
+;
+
+
+}
+/* .modal-body { */
+/* 	padding: 2px 16px; */
+/* } */
+
+.modal-footer {
+	padding: 2px 16px;
+	background-color: ${colour}
+;
+color
+:
+
+white
+;
+
+
+}
+</style>
+</head>
+<body>
+
+
+	<!-- Trigger/Open The Modal -->
+	<button id="myBtn" style="background-color: ${colour}" class="card">Order
+		${prodName}</button>
+
+	<!-- The Modal -->
+	<div id="myModal" class="modal" role="model">
+
+		<!-- Modal content -->
+		<div class="modal-content" role="modal content">
+			<div class="modal-header" role="modal content">
+				<span class="close" role="close modal">&times;</span>
+				<h2>Order ${prodName}</h2>
+			</div>
+			<div class="modal-body" role="modal body">
+				<form action="${pageContext.request.contextPath}/NewOrder/"
+					method="post">
+
+					<c:if test="${order != null}">
+						<input type="hidden" name="id"
+							value="<c:out value='${order.id}' />" />
+					</c:if>
+
+					<fieldset class="form-group">
+						<label for="name">Your Name</label> <input type="text"
+							value="<c:out value='${order.name}' />" class="form-control"
+							name="name" required="required">
+					</fieldset>
+
+					<fieldset class="form-group">
+						<label for="email">Your Email</label> <input type="text"
+							value="<c:out value='${order.email}' />" class="form-control"
+							name="email">
+					</fieldset>
+
+
+
+					<input aria-label="None" type="text" <%Date date = new Date();%>
+						value="<c:out value="<%=(new java.util.Date()).toLocaleString()%>" />"
+						class="form-control" name="time_date">
+					<!-- 				 </fieldset> -->
+
+					<fieldset class="form-group">
+						<label for="address">Your delivery address</label> <input type="text"
+							value="<c:out value='${order.address}' />" class="form-control"
+							name="address" required="required">
+					</fieldset>
+
+
+					<fieldset class="form-group">
+						<label for="productName">Product Required</label> <input type="text"
+							value="<c:out value='${prodName}'  />" class="form-control"
+							name="productName" required="required">
+					</fieldset>
+
+
+
+
+
+					<input aria-label="none" type="text" value="<c:out value='${order.status}' />"
+						class="form-control" name="Dispatched">
+					<!-- 				</fieldset> -->
+					<section class="basic-grid">
+						<button type="submit" style="background-color: ${colour};"
+							class="card"> Order ${prodName}</button>
+								</section>
+
+				</form>
+
+
+			</div>
+			<div class="modal-footer" role="modal footer">
+				<h3>The Linux mail order company.</h3>
+
+			</div>
+		</div>
+
+	</div>
+
+	<script>
+		// Get the modal
+		var modal = document.getElementById("myModal");
+
+		// Get the button that opens the modal
+		var btn = document.getElementById("myBtn");
+
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+
+		// When the user clicks the button, open the modal
+		btn.onclick = function() {
+			modal.style.display = "block";
+		}
+
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function() {
+			modal.style.display = "none";
+		}
+
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+		}
+	</script>
+</body>
+
+</html>

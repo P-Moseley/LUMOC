@@ -1,0 +1,75 @@
+<!doctype html>
+
+<head>
+  <meta charset="utf-8">
+
+<html lang="en">
+  <html>
+    <head>
+      <title>Tracking Results</title>
+      <%--
+      <link
+        rel="StyleSheet"
+        href="<%=request.getContextPath()%>/style.css"
+        type="text/css"
+      />
+      --%>
+      <link
+        rel="StyleSheet"
+        href="<%=request.getContextPath()%>/base.css"
+        type="text/css"
+      />
+    </head>
+
+    <body>
+      <!-- <div class="card" style="background-color: yellow"> -->
+      <div class="modal-header" role="title">
+        <h3>trackingResults</h3>
+      </div>
+      <!-- </div> -->
+      <!-- 	<section class="basic-grid"> -->
+      <div class="modal-body" role="body">
+        <jsp:useBean
+          id="sampleTEST_testProxyid"
+          scope="session"
+          class="com.soapAttempt16.TrackingServiceProxy"
+        />
+        <% %> <% String method = request.getParameter("method"); int methodID =
+        0; if (method == null) methodID = -1; if(methodID != -1) methodID =
+        Integer.parseInt(method); boolean gotMethod = false; try { switch
+        (methodID){ case 2: gotMethod = true; java.lang.String getEndpoint2mtemp
+        = sampleTEST_testProxyid.getEndpoint(); if(getEndpoint2mtemp == null){
+        %> <%=getEndpoint2mtemp%> <% }else{ String temptrackingResultsreturnp3 =
+        org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getEndpoint2mtemp));
+        %> <%=temptrackingResultsreturnp3%> <% } break; case 5: gotMethod =
+        true; String endpoint_0id= request.getParameter("endpoint8");
+        java.lang.String endpoint_0idTemp = null; if(!endpoint_0id.equals("")){
+        endpoint_0idTemp = endpoint_0id; }
+        sampleTEST_testProxyid.setEndpoint(endpoint_0idTemp); break; case 10:
+        gotMethod = true; com.soapAttempt16.TrackingService getTEST_test10mtemp
+        = sampleTEST_testProxyid.getHelloWorld(); if(getTEST_test10mtemp ==
+        null){ %> <%=getTEST_test10mtemp %> <% }else{ if(getTEST_test10mtemp!=
+        null){ String tempreturnp11 = getTEST_test10mtemp.toString(); %>
+        <%=tempreturnp11%> <% }} break; case 13: String name_1id=
+        request.getParameter("name16"); java.lang.String name_1idTemp = null;
+        if(!name_1id.equals("")){ name_1idTemp = name_1id; } java.lang.String
+        sayHelloWorld13mtemp =
+        sampleTEST_testProxyid.sayHelloWorld(name_1idTemp);
+        if(sayHelloWorld13mtemp == null){ %> <%=sayHelloWorld13mtemp %> <%
+        }else{ String temptrackingResultsreturnp14 =
+        org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(sayHelloWorld13mtemp));
+        %> <%= temptrackingResultsreturnp14 %> <% } } } catch (Exception e) { %>
+        Exception: <%= org.eclipse.jst.ws.util.JspUtils.markup(e.toString()) %>
+        Message: <%= org.eclipse.jst.ws.util.JspUtils.markup(e.getMessage()) %>
+        <% return; } if(!gotMethod){ %>
+        <!-- trackingResults: N/A -->
+
+        | Thanks for using our tracking Service. <% } %>
+      </div>
+      <div class="model-footer" role="footer">
+        <a href="<%=request.getContextPath()%>"> Go Back</a> <br /><br />
+      </div>
+      <!-- </section> -->
+    </body>
+  </html>
+</html>

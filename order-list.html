@@ -1,0 +1,118 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+<html>
+
+<head>
+	<title>Linux mail order Admin page</title>
+	<LINK REL="StyleSheet" HREF="<%=request.getContextPath()%>/style.css" TYPE="text/css">
+	<LINK REL="StyleSheet" HREF="<%=request.getContextPath()%>/base.css" TYPE="text/css">
+	<title>Linux mail order company Admin page</title>
+</head>
+
+<body>
+
+	<header>
+		<!--<nav class="navbar navbar-expand-md navbar-dark"
+			style="background-color: tomato">  -->
+		<div>
+			<!-- <a href="https://www.javaguides.net" class="navbar-brand"> Orders
+					Management App </a>-->
+		</div>
+
+		<!-- <ul class="navbar-nav">
+				<li><a href=<%--"<%=request.getContextPath()%>/list"--%>
+					class="nav-link">Orders</a></li>--!>
+			</ul>
+		</nav>
+	</header>
+	<br>
+
+	<div class="row">
+		<!-- <div class="alert alert-success" *ngIf='message'>{{message}}</div> -->
+
+		<div class="container" role="container">
+			<h3 class="text-center">List of Orders</h3>
+			<hr>
+			<div class="container text-left" role="container">
+
+				<!--	<a href=<%--"<%=request.getContextPath()%>/new"--%> class="btn btn-success">Add-->
+				<!-- New Orders</a>-->
+			</div>
+			<br>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Name</th>
+						<th>Email</th>
+						<th>time+date of order</th>
+						<th>address</th>
+						<th>Product ordered</th>
+						<th>Dispatched</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!--   for (Todo todo: todos) {  -->
+					<c:forEach var="order" items="${listOrders}">
+
+						<tr>
+							<td>
+								<c:out value="${order.id}" />
+							</td>
+							<td>
+								<c:out value="${order.name}" />
+							</td>
+							<td>
+								<c:out value="${order.email}" />
+							</td>
+							<td>
+								<c:out value="${order.timeDate}" />
+							</td>
+							<td>
+								<c:out value="${order.address}" />
+							</td>
+							<td>
+								<c:out value="${order.productName}" />
+							</td>
+
+
+							<td>
+								<c:out value="${order.status}" />
+							</td>
+
+
+							<td><a href="<%=request.getContextPath()%>/edit?id=<c:out value='${order.id}' />">Edit Order
+									Details</a>
+								&nbsp;&nbsp;&nbsp;&nbsp;
+
+								<a href="<%=request.getContextPath()%>/delete?id=<c:out value='${order.id}' />">Delete
+									order</a>
+
+								<c:if test="${order.status }">
+									<p style="color:yellow">Order number:
+										<c:out value='${order.id}' /> | Dispatched
+										<a
+											href="<%=request.getContextPath()%>/markAsDispached?id=<c:out value='${order.id}' />">Undo</a>
+									</p>
+
+								</c:if>
+								<c:if test="${!order.status }">
+									<a
+										href="<%=request.getContextPath()%>/markAsDispached?id=<c:out value='${order.id}' />&name=<c:out value='${order.name }'/>&email=<c:out value='${order.email}'/>&product=<c:out value='${order.productName }'/>">Mark
+										as dispatched</a>
+								</c:if>
+							</td>
+						</tr>
+					</c:forEach>
+					<!-- } -->
+				</tbody>
+			</table>
+		</div>
+		</div>
+</body>
+
+</html>

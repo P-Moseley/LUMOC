@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+	<LINK REL="StyleSheet" HREF="<%=request.getContextPath()%>/style.css" TYPE="text/css">
+	<LINK REL="StyleSheet" HREF="<%=request.getContextPath()%>/base.css" TYPE="text/css">
+	<title>Linux mail order company</title>
+	<!--   <style>
+        @import url('./base.css');
+        @import url('./animated-grid.css');
+    </style> -->
+</head>
+
+<body>
+	<section class="basic-grid">
+		<div class="card" role="card">
+			<h3 style="font-size: 2vw;">
+				<c:out value='${param.product}' />
+			</h3>
+			<img alt="Selected product image" src="<%=request.getContextPath()%>/images/${param.product}.png">
+
+			<p style="font-size: 1vw;">TEST_test</p>
+
+
+		</div>
+		</div>
+
+
+	</section>
+	</div>
+	</div>
+
+	<section>
+		<div class="form" style="color: white;" role="orderForm">
+			
+			<c:if test="${order != null}">
+				<form action="updateOrders" method="post">
+			</c:if>
+			<c:if test="${order == null}">
+				<form action="insert" method="post">
+			</c:if>
+
+			<%-- 			<caption> --%>
+			<!-- 				<h2> -->
+			<c:if test="${order != null}">
+				Edit Orders
+			</c:if>
+			<c:if test="${order == null}">
+				Add New Orders
+			</c:if>
+			<!-- 				</h2> -->
+			<%-- 			</caption> --%>
+			<%-- 			<form action="${pageContext.request.contextPath}/insert" method="post"> --%>
+
+			<c:if test="${order != null}">
+				<input type="text" aria-label="None" name="id" value="<c:out value='${order.id}' />" />
+			</c:if>
+
+			<fieldset class="form-group">
+				<label for="name">Your Name</label> <input type="text" aria-label="name" value="<c:out value='${order.name}' />" class="form-control"
+					name="name" required="required">
+			</fieldset>
+
+			<fieldset class="form-group">
+				<label for="email">Your Email</label> <input type="text" aria-label="email" value="<c:out value='${order.email}' />"
+					class="form-control" name="email">
+			</fieldset>
+			
+
+			<fieldset class="form-group">
+				<label for="time_date">User time and date</label> <input type="text" aria-label="time_date" value="<c:out value='${order.timeDate}' />"
+					class="form-control" name="time_date">
+			</fieldset>
+			<fieldset class="form-group">
+				<label for="address">User Address</label> <input type="text" aria-label="address" value="<c:out value='${order.address}' />"
+					class="form-control" name="address">
+			</fieldset>
+			<fieldset class="form-group">
+				<label for="productName">Product Ordered</label> <input type="text" aria-label="productName" value="<c:out value='${param.product}' />"
+					class="form-control" name="productName">
+			</fieldset>
+			<fieldset class="form-group">
+				<label for="status">Dispatched status</label> <input type="text" aria-label="status" value="<c:out value='${order.status}' />"
+					class="form-control" name="status">
+			</fieldset>
+
+
+			<!--   <fieldset class="form-group">
+					<label>Orders time_date</label> <input type="text"
+
+						value="<c:out value='${order.time_date}' />" class="form-control"
+						name="time_date">
+				</fieldset>-->
+
+			<!-- 				<fieldset class="form-group"> -->
+			<%-- <label>Orders time date</label> <input type="text"
+					<%Date date = new Date();%>
+
+			value="
+			<c:out value="<%= date.toString() %>" />" class="form-control"
+			name="time_date"> --%>
+
+			<input aria-label="None" type="text" <%Date date = new Date();%> value="<c:out value="
+				<%= (new java.util.Date()).toLocaleString()%>" />"
+			class="form-control" name="time_date">
+			<!-- 				 </fieldset> -->
+
+			<fieldset class="form-group">
+				<label for="address">Your delivery address</label> <input type="text" aria-label="address" value="<c:out value='${order.address}' />"
+					class="form-control" name="address" required="required">
+			</fieldset>
+			<%--<fieldset class="form-group">
+					<label>product</label> <input type="text"
+						value="<c:out value='${param.product}' />" class="form-control"
+						name="productName" required="required">
+				</fieldset>--%>
+
+			<%-- <fieldset class="form-group">
+				<label>Product Required</label> <input type="text"
+					value="<c:out value='${param.product}'  />" class="form-control"
+					name="productName" required="required">
+			</fieldset> --%>
+
+
+
+			<!-- Design pattern: decorator pattern, possbily state -->
+			<fieldset class="form-group">
+
+				<label for="Dispached">Dispatched</label>
+				<!-- 							<input type="text" -->
+				<%-- <input type="text" aria-label="Dispached" value="<c:out value='${order.status}' />"
+				class="form-control" name="Dispached">>
+							</fieldset> --%>
+				<section class="basic-grid">
+					<button type="submit" style="background-color: yellow" class="card">Commit Changes</button>
+					</form>
+				</section>
+</body>
+
+</html>
