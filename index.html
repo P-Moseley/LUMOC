@@ -34,8 +34,8 @@
   </nav>
 <h1>The Linux USB Mail Company</h1>
   <section class="animated-grid">
-    <%-- <a href=productsPage.html"> --%>
-    <div class="flex-container" style="background-color: #5f5f5f;">
+    <%-- <a href="/productsPage.html"> --%>
+    <div class="flex-container" style="background-color: aqua;">
       <!-- <div class="card" style="background-color: aqua;">See all -->
       <!-- products >>></div> -->
     </div>
@@ -47,11 +47,11 @@
 
           <div class="flip-card-inner ">
 
-            <div class="flip-card-front " style="background-color: #1742d1">
+            <div class="flip-card-front " style="background-color: #1742d1; color: white">
               <img alt="Arch logo" src=images/Arch.png" style="object-fit: cover; width: 100%;">
 
             </div>
-            <div class="flip-card-back " style="background-color: #1742d1">
+            <div class="flip-card-back " style="background-color: #1742d1; color:white">
 
               <article class="article-container">
 
@@ -101,7 +101,7 @@
         <!-- page</a> <br><br><br> -->
         <%-- href=sampleHelloWorldProxy/TestClient.html">Track --%>
         <!-- your order</a> -->
-        <a href=productsPage.html">See all Products</a>
+        <a href="/productsPage.html">See all Products</a>
 
 
       </div>
@@ -171,7 +171,7 @@
           <label for="trackingService" name="trackingServiceLabel">Please Enter your tracking ID number here</label>
 
           <FORM METHOD="POST" ACTION="trackingResults.html" TARGET="trackingResults">
-            <INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.htmlUtils.markup("13")%>">
+            <INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.jspUtils.markup("13")%>">
 
 
             <INPUT TYPE="TEXT" NAME="name16" SIZE=20 placeholder="Enter your tracking number here" aria-label="trackingService">
